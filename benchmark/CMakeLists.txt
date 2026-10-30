@@ -3,7 +3,7 @@ project(lru_benchmark)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# find_package(Folly)
+#find_package(Folly)
 find_package(OpenMP REQUIRED)
 
 #add_subdirectory(thirdparty/tbb)
@@ -18,3 +18,5 @@ include_directories(../include)
 #target_link_libraries(lru_benchmark PRIVATE tsan)
 #target_link_libraries(lru_benchmark PRIVATE tbb_static glog OpenMP::OpenMP_CXX)
 include_directories(thirdparty/args/include)
+
+target_include_directories(deferred_lru INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/src)
